@@ -141,7 +141,7 @@ async function loadSavedData() {
 }
 
 // Nastavení event listenerů
-function setupEventListeners() {
+//function setupEventListeners() {
     // Export do Wordu
     document.querySelector('#exportBtn')?.addEventListener('click', exportToWord);
     
