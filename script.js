@@ -151,6 +151,24 @@ function setupEventListeners() {
             clearCurrentMonthShifts();
         }
     });
+function setupEventListeners() {
+    // Stávající event listenery zůstanou
+    document.querySelector('#exportBtn')?.addEventListener('click', exportToWord);
+    
+    document.querySelector('#clearBtn')?.addEventListener('click', () => {
+        if (confirm('Opravdu chcete vymazat všechny služby pro tento měsíc?')) {
+            clearCurrentMonthShifts();
+        }
+    });
+
+    // Nový event listener pro zavření menu modálu
+    const closeButton = document.getElementById('closeMenuModal');
+    if (closeButton) {
+        closeButton.addEventListener('click', () => {
+            // Přidání třídy 'hidden' schová modální okno
+            document.getElementById('menuModal').classList.add('hidden');
+        });
+    }
 }
 
 // Export do Wordu
