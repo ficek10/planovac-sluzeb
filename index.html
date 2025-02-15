@@ -66,14 +66,29 @@
             <button onclick="ShiftManager.updateStats()" class="flex flex-col items-center">
                 <span>Statistiky</span>
             </button>
-            <button onclick="exportToWord()" class="flex flex-col items-center">
-                <span>Export</span>
-            </button>
-            <button onclick="clearCurrentMonthShifts()" class="flex flex-col items-center">
-                <span>Vymazat</span>
+            <button onclick="document.getElementById('menuModal').classList.remove('hidden')" class="flex flex-col items-center">
+                <span>Více</span>
             </button>
         </div>
     </nav>
+
+    <!-- Menu modal -->
+    <div id="menuModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold">Menu</h3>
+                <button onclick="document.getElementById('menuModal').classList.add('hidden')" class="text-gray-500">&times;</button>
+            </div>
+            <div class="space-y-2">
+                <button onclick="exportToWord()" class="w-full p-2 bg-blue-500 text-white rounded">
+                    Export do Wordu
+                </button>
+                <button onclick="clearCurrentMonthShifts()" class="w-full p-2 bg-red-500 text-white rounded">
+                    Vymazat služby
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Skripty -->
     <script src="modules/storage.js"></script>
